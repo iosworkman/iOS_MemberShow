@@ -7,12 +7,18 @@
 //
 
 #import "BCAppDelegate.h"
+#import "OSContainerViewController.h"
+#import "OSMenuViewController.h"
+#import <ECSlidingViewController.h>
+
+@interface BCAppDelegate()
+@property(nonatomic,strong)ECSlidingViewController *slidingViewController;
+@end
 
 @implementation BCAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
     return YES;
 }
 							

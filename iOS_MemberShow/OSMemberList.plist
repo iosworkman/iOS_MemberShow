@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>name</key>
+		<string>BifidyCAPs</string>
+		<key>prefix</key>
+		<string>BC</string>
+		<key>job</key>
+		<string>码农</string>
+		<key>icon</key>
+		<string>BC_icon</string>
+		<key>introduce</key>
+		<string>现役码农，老老实实学语言中。
+13年毕业于某不知名二本，专业是机械工程及其自动化
+鉴于在校期间学业荒废，毕业后的半年里恶补了三个月的Objective-C
+（好吧，这是个深奥的数学问题）
+现在供职于某公司APPs开发部门，做iPhone/iPad开发，实习期未满。</string>
+		<key>advantage</key>
+		<string>C语言/OC语法</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string></string>
+		<key>prefix</key>
+		<string></string>
+		<key>icon</key>
+		<string></string>
+		<key>introduce</key>
+		<string></string>
+		<key>advantage</key>
+		<string></string>
+	</dict>
+</array>
+</plist>
