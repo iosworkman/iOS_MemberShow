@@ -10,5 +10,5 @@
 #import "OSMemberCardViewController.h"
 
 @interface OSCreateVCDelegate : NSObject
--(UINavigationController *)createViewControllerFor:(NSInteger)num;
+-(id)createViewControllerFor:(NSInteger)num;
 @end

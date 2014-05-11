@@ -9,9 +9,12 @@
 #import "OSMemberCardViewController.h"
 #import "OSMemberListSingleton.h"
 #import "OSCreateVCDelegate.h"
+#import <ECSlidingViewController/UIViewController+ECSlidingViewController.h>
+#import <APAvatarImageView.h>
+
 @interface OSMemberCardViewController ()
 
-@property (weak, nonatomic) IBOutlet UIImageView *icon;
+@property (weak, nonatomic) IBOutlet APAvatarImageView *icon;
 @property (weak, nonatomic) IBOutlet UILabel *age;
 @property (weak, nonatomic) IBOutlet UILabel *prefix;
 @property (weak, nonatomic) IBOutlet UILabel *job;
@@ -46,20 +49,28 @@
 
 -(void)setInformationWithNumber:(NSInteger)num{
     NSDictionary *dic=[OSMemberList shareMemberList].memberList[num];
-    self.navigationController.title=dic[@"name"];
+    self.title=dic[@"name"];
     self.age.text=dic[@"age"];
     self.prefix.text=dic[@"prefix"];
     self.job.text=dic[@"job"];
     self.advantage.text=dic[@"advantage"];
     self.introduce.text=dic[@"introduce"];
     self.icon.image=[UIImage imageNamed:dic[@"icon"]];
-    NSLog(@"%@",[dic description]);
+}
+-(id)icon{
+    _icon.borderColor = [UIColor whiteColor];
+    _icon.borderWidth = 3.0;
+    return _icon;
 }
 
 - (void)viewDidLoad
-{    [self setInformationWithNumber:self.ownerNumber];
+{
+    [self.view addGestureRecognizer:[self.slidingViewController panGesture]];
+    [self setInformationWithNumber:self.ownerNumber];
+    self.createDelegate=[[OSCreateVCDelegate alloc]init];
+    self.navigationController.navigationBar.barStyle=UIBarStyleBlackTranslucent;
+    self.introduce.textColor=[UIColor whiteColor];
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning

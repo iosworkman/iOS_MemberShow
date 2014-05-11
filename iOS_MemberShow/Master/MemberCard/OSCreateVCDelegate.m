@@ -20,6 +20,7 @@
             //Insert your View Controller here likes the example~~~~~~~~~~~~~~~~~
         default:
         {yourViewController=[[UIViewController alloc]init];
+            [[yourViewController view]setBackgroundColor:[UIColor lightGrayColor]];
             break;}
     }
     return yourViewController;

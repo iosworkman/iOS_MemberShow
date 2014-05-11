@@ -20,6 +20,7 @@
 
 - (void)viewDidLoad
 {
+
     self.anchorRightPeekAmount=200;
     [super viewDidLoad];
     // Do any additional setup after loading the view.
