@@ -9,7 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface OSMemberCardViewController : UIViewController
--(id)initWithYourViewController:(id)VC;
--(void)setName:(NSString *)name Icon:(NSString *)icon Age:(NSString *)age Prefix:(NSString *)prefix job:(NSString *)job Advantage:(NSString *)advantage Introduce:(NSString *)introduce;
-
++(id)allocWithNumber:(NSInteger)num;
 @end

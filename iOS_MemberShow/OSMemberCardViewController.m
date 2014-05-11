@@ -7,9 +7,9 @@
 //
 
 #import "OSMemberCardViewController.h"
-
+#import "OSMemberListSingleton.h"
+#import "OSCreateVCDelegate.h"
 @interface OSMemberCardViewController ()
-
 
 @property (weak, nonatomic) IBOutlet UIImageView *icon;
 @property (weak, nonatomic) IBOutlet UILabel *age;
@@ -17,12 +17,16 @@
 @property (weak, nonatomic) IBOutlet UILabel *job;
 @property (weak, nonatomic) IBOutlet UILabel *advantage;
 @property (weak, nonatomic) IBOutlet UITextView *introduce;
-@property(nonatomic,weak)id pushViewController;
+
+@property(nonatomic,strong)id pushViewController;
+@property(nonatomic,strong)OSCreateVCDelegate *createDelegate;
+@property(nonatomic)NSInteger ownerNumber;
 @end
 
 @implementation OSMemberCardViewController
+
 - (IBAction)showYourAPPs:(UIButton *)sender {
-    [self.navigationController pushViewController:self.pushViewController animated:YES];
+    [self.navigationController pushViewController:[self.createDelegate createViewControllerFor:self.ownerNumber] animated:YES];
 }
 
 -(id)init{
@@ -33,26 +37,27 @@
 
 }
 
--(id)initWithYourViewController:(id)VC{
-    self=[super init];
-    if ([VC isMemberOfClass:[UIViewController class]]) {
-        self.pushViewController=VC;
-    }
-    return self;
++(id)allocWithNumber:(NSInteger)num{
+    OSMemberCardViewController *obj=[[OSMemberCardViewController alloc]init];
+    obj.ownerNumber=num;
+    return obj;
 }
 
--(void)setName:(NSString *)name Icon:(NSString *)icon Age:(NSString *)age Prefix:(NSString *)prefix job:(NSString *)job Advantage:(NSString *)advantage Introduce:(NSString *)introduce{
-    self.navigationController.title=name;
-    self.age.text=age;
-    self.prefix.text=prefix;
-    self.job.text=job;
-    self.advantage.text=advantage;
-    self.introduce.text=introduce;
-    self.icon.image=[UIImage imageNamed:icon];
+
+-(void)setInformationWithNumber:(NSInteger)num{
+    NSDictionary *dic=[OSMemberList shareMemberList].memberList[num];
+    self.navigationController.title=dic[@"name"];
+    self.age.text=dic[@"age"];
+    self.prefix.text=dic[@"prefix"];
+    self.job.text=dic[@"job"];
+    self.advantage.text=dic[@"advantage"];
+    self.introduce.text=dic[@"introduce"];
+    self.icon.image=[UIImage imageNamed:dic[@"icon"]];
+    NSLog(@"%@",[dic description]);
 }
 
 - (void)viewDidLoad
-{
+{    [self setInformationWithNumber:self.ownerNumber];
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }

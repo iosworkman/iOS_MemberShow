@@ -3,6 +3,8 @@
 <plist version="1.0">
 <array>
 	<dict>
+		<key>age</key>
+		<string>23</string>
 		<key>name</key>
 		<string>BifidyCAPs</string>
 		<key>prefix</key>
@@ -21,16 +23,20 @@
 		<string>C语言/OC语法</string>
 	</dict>
 	<dict>
+		<key>age</key>
+		<string>30</string>
+		<key>job</key>
+		<string>老板</string>
 		<key>name</key>
-		<string></string>
+		<string>逆行的虫子</string>
 		<key>prefix</key>
-		<string></string>
+		<string>Bug</string>
 		<key>icon</key>
-		<string></string>
+		<string>Bug_icon</string>
 		<key>introduce</key>
-		<string></string>
+		<string>很帅</string>
 		<key>advantage</key>
-		<string></string>
+		<string>黑苹果</string>
 	</dict>
 </array>
 </plist>

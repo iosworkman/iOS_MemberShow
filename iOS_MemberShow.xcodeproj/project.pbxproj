@@ -11,8 +11,9 @@
 		424175BC191D547800389AEA /* OSContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 424175BB191D547800389AEA /* OSContainerViewController.m */; };
 		42707043191DF89100B969F0 /* OSMemberCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42707042191DF89100B969F0 /* OSMemberCardViewController.m */; };
 		42707046191DF94F00B969F0 /* OSMemberList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 42707045191DF94F00B969F0 /* OSMemberList.plist */; };
-		4270704A191E0B5200B969F0 /* OSMenuViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 42707049191E0B5200B969F0 /* OSMenuViewDelegate.m */; };
+		4270704A191E0B5200B969F0 /* OSCreateVCDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 42707049191E0B5200B969F0 /* OSCreateVCDelegate.m */; };
 		4270704D191E0CD500B969F0 /* BCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4270704C191E0CD500B969F0 /* BCViewController.m */; };
+		428B1E32191F466B00B00622 /* OSMemberListSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 428B1E31191F466B00B00622 /* OSMemberListSingleton.m */; };
 		429F3EE5191CFFB2004D26E5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 429F3EE4191CFFB2004D26E5 /* Foundation.framework */; };
 		429F3EE7191CFFB2004D26E5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 429F3EE6191CFFB2004D26E5 /* CoreGraphics.framework */; };
 		429F3EE9191CFFB2004D26E5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 429F3EE8191CFFB2004D26E5 /* UIKit.framework */; };
@@ -49,10 +50,12 @@
 		42707042191DF89100B969F0 /* OSMemberCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSMemberCardViewController.m; sourceTree = "<group>"; };
 		42707045191DF94F00B969F0 /* OSMemberList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = OSMemberList.plist; sourceTree = "<group>"; };
 		42707047191E037100B969F0 /* OSMemberHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSMemberHeader.h; sourceTree = "<group>"; };
-		42707048191E0B5200B969F0 /* OSMenuViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OSMenuViewDelegate.h; path = SlideView/OSMenuViewDelegate.h; sourceTree = "<group>"; };
-		42707049191E0B5200B969F0 /* OSMenuViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OSMenuViewDelegate.m; path = SlideView/OSMenuViewDelegate.m; sourceTree = "<group>"; };
+		42707048191E0B5200B969F0 /* OSCreateVCDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OSCreateVCDelegate.h; path = SlideView/OSCreateVCDelegate.h; sourceTree = "<group>"; };
+		42707049191E0B5200B969F0 /* OSCreateVCDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OSCreateVCDelegate.m; path = SlideView/OSCreateVCDelegate.m; sourceTree = "<group>"; };
 		4270704B191E0CD500B969F0 /* BCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCViewController.h; sourceTree = "<group>"; };
 		4270704C191E0CD500B969F0 /* BCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCViewController.m; sourceTree = "<group>"; };
+		428B1E30191F466B00B00622 /* OSMemberListSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OSMemberListSingleton.h; path = SlideView/OSMemberListSingleton.h; sourceTree = "<group>"; };
+		428B1E31191F466B00B00622 /* OSMemberListSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OSMemberListSingleton.m; path = SlideView/OSMemberListSingleton.m; sourceTree = "<group>"; };
 		429F3EE1191CFFB2004D26E5 /* iOS_MemberShow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS_MemberShow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		429F3EE4191CFFB2004D26E5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		429F3EE6191CFFB2004D26E5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -107,8 +110,10 @@
 				429F3EF6191CFFB2004D26E5 /* OSContainer.storyboard */,
 				424175B7191D516D00389AEA /* OSMenuViewController.h */,
 				424175B8191D516D00389AEA /* OSMenuViewController.m */,
-				42707048191E0B5200B969F0 /* OSMenuViewDelegate.h */,
-				42707049191E0B5200B969F0 /* OSMenuViewDelegate.m */,
+				428B1E30191F466B00B00622 /* OSMemberListSingleton.h */,
+				428B1E31191F466B00B00622 /* OSMemberListSingleton.m */,
+				42707048191E0B5200B969F0 /* OSCreateVCDelegate.h */,
+				42707049191E0B5200B969F0 /* OSCreateVCDelegate.m */,
 				424175BA191D547800389AEA /* OSContainerViewController.h */,
 				424175BB191D547800389AEA /* OSContainerViewController.m */,
 			);
@@ -371,10 +376,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				42F384B7191DC9DA0075295A /* OSIntroductionViewController.m in Sources */,
+				428B1E32191F466B00B00622 /* OSMemberListSingleton.m in Sources */,
 				429F3EF1191CFFB2004D26E5 /* main.m in Sources */,
 				4270704D191E0CD500B969F0 /* BCViewController.m in Sources */,
 				429F3EF5191CFFB2004D26E5 /* BCAppDelegate.m in Sources */,
-				4270704A191E0B5200B969F0 /* OSMenuViewDelegate.m in Sources */,
+				4270704A191E0B5200B969F0 /* OSCreateVCDelegate.m in Sources */,
 				424175BC191D547800389AEA /* OSContainerViewController.m in Sources */,
 				42707043191DF89100B969F0 /* OSMemberCardViewController.m in Sources */,
 				424175B9191D516D00389AEA /* OSMenuViewController.m in Sources */,

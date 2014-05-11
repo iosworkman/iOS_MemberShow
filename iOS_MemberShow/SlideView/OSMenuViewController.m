@@ -7,14 +7,13 @@
 //
 
 #import "OSMenuViewController.h"
-#import "OSMemberCardViewController.h"
-#import "OSMenuViewDelegate.h"
+#import "OSMemberListSingleton.h"
 #import <UIViewController+ECSlidingViewController.h>
-
+#import "OSCreateVCDelegate.h"
 @interface OSMenuViewController ()
 @property(nonatomic,strong)NSMutableArray *memberList;
 @property(nonatomic,strong)NSMutableDictionary *controllerList;
-@property(nonatomic,strong)id delegate;
+@property(nonatomic,strong)id createDelegate;
 @end
 
 @implementation OSMenuViewController
@@ -22,10 +21,8 @@
 - (IBAction)unwindToMenuViewController:(UIStoryboardSegue *)segue{}
 
 - (void)viewDidLoad
-{self.memberList=[self memberList];
-    self.delegate=[[OSMenuViewDelegate alloc]init];
+{self.createDelegate=[[OSCreateVCDelegate alloc]init];
     [super viewDidLoad];
-    
 }
 
 #pragma mark - Table view data source
@@ -37,9 +34,8 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-//return self.nameArray.count;
     if (section) {
-        return self.memberList.count;
+        return self.memberList.count ;
     }
     return 2;
 }
@@ -51,7 +47,6 @@
     if(indexPath.section){
         cell = [tableView dequeueReusableCellWithIdentifier:@"name" forIndexPath:indexPath];
         cell.textLabel.text=self.memberList[indexPath.row][@"name"];
-
     }else{
             cell = [tableView dequeueReusableCellWithIdentifier:@"title" forIndexPath:indexPath];
         }
@@ -59,11 +54,10 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    OSMemberCardViewController *memberCard=self.controllerList[_memberList[indexPath.row][@"prefix"]];
-    [self setInfromationWithController:memberCard Number:indexPath.row];
-    [self.slidingViewController.topViewController.navigationController pushViewController:memberCard animated:NO];
-    
-    //[self.slidingViewController resetTopViewAnimated:YES];
+    if (indexPath.section) {
+        self.slidingViewController.topViewController=[self createViewControllerFor:indexPath.row];
+    }
+    [self.slidingViewController resetTopViewAnimated:YES];
 }
 //section title
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
@@ -79,39 +73,17 @@
     }
 }
 
-//此处需考虑性能，控制器过多时要考虑单独延迟实例化
--(id)controllerList{
-    if (_controllerList==nil) {
-        _controllerList=[[NSMutableDictionary alloc]init];
-        for (id tmp in  _memberList) {
-            OSMemberCardViewController  *memberCard=[self.delegate createViewControllerFor:tmp[@"prefix"]];
-            [_controllerList setObject:memberCard forKey:tmp[@"prefix"]];
-        }
-    }
-    return _controllerList;
-}
 
 -(id)memberList{
     if(_memberList==nil){
-        NSString *path=[[[NSBundle mainBundle]resourcePath]  stringByAppendingString:@"/OSMemberList.plist"];
-        _memberList=[[NSMutableArray alloc]initWithContentsOfFile:path];
+        self.memberList=[OSMemberList shareMemberList].memberList;
     }
     return _memberList;
 }
 
-
--(void)setInfromationWithController:(OSMemberCardViewController *)memberCard Number:(NSInteger)num{
-    [memberCard setName:self.memberList[num][@"name"]
-Icon:self.memberList[num][@"icon"]
-Age:self.memberList[num][@"age"]
-Prefix:self.memberList[num][@"prefix"]
-job:self.memberList[num][@"job"]
-Advantage:self.memberList[num][@"advantage"]
-Introduce:self.memberList[num][@"introduce"]
-     ];
-    
-
+-(UINavigationController *)createViewControllerFor:(NSInteger)num{
+    OSMemberCardViewController *memberCard=[OSMemberCardViewController allocWithNumber:num];
+    UINavigationController *navVC=[[UINavigationController alloc]initWithRootViewController:memberCard];
+    return navVC;
 }
-
-
 @end

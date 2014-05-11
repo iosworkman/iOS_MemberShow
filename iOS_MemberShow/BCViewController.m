@@ -25,6 +25,7 @@
 
 - (void)viewDidLoad
 {self.view.backgroundColor=[UIColor greenColor];
+    NSLog(@"This is BifidyCAPs~") ;
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }

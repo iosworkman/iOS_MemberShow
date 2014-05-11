@@ -9,6 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "OSMemberCardViewController.h"
 
-@interface OSMenuViewDelegate : NSObject
--(OSMemberCardViewController *)createViewControllerFor:(NSString *)str;
+@interface OSCreateVCDelegate : NSObject
+-(UINavigationController *)createViewControllerFor:(NSInteger)num;
 @end
