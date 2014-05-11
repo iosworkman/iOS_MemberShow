@@ -35,4 +35,16 @@
  
 ##使用
 
-觉得这个讲起来巨复杂，每个10来张截图的完全搞不定，不过饶了我吧，稍后会讲哦~
+觉得这个讲起来巨复杂，每个10来张截图的完全搞不定，所以决定直接录视频了= =	
+第一次录视频，能力有限，能看就行，是吧~	
+[iOSMemberShow参与讲解（上）](http://v.youku.com/v_show/id_XNzEwNzE1NzUy.html)	
+[iOSMemberShow参与讲解（中）](http://v.youku.com/v_show/id_XNzEwNzIwNjY4.html)	
+[iOSMemberShow参与讲解（下）](http://v.youku.com/v_show/id_XNzEwNzI1NzA4.html)	
+如有疑问，或视频讲解不清楚，还请诸位在群中发言。
+
+##后记
+本人能力有限，做出来的东西恐怕也难以让大家自由施展，还望大家群策群力，一起加油。相互帮助，众人拾柴火焰高。
+
+在此谢过
+
+BifidyCAPs
