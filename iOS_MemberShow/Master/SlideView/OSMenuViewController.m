@@ -9,7 +9,7 @@
 #import "OSMenuViewController.h"
 #import "OSMemberListSingleton.h"
 #import <UIViewController+ECSlidingViewController.h>
-#import "OSCreateVCDelegate.h"
+
 @interface OSMenuViewController ()
 @property(nonatomic,strong)NSMutableArray *memberList;
 @property(nonatomic,strong)NSMutableDictionary *controllerList;
@@ -21,7 +21,8 @@
 - (IBAction)unwindToMenuViewController:(UIStoryboardSegue *)segue{}
 
 - (void)viewDidLoad
-{self.createDelegate=[[OSCreateVCDelegate alloc]init];
+{
+    [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleDefault ];
     [super viewDidLoad];
 }
 

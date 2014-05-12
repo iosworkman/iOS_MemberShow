@@ -20,8 +20,7 @@
 
 - (void)viewDidLoad
 {
-
-    self.anchorRightPeekAmount=200;
+    self.anchorRightRevealAmount=140;
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
