@@ -8,6 +8,7 @@
 #import "OSCreateVCDelegate.h"
 #import "OSMemberListSingleton.h"
 #import "BCViewController.h"
+#import "dopcnViewController.h"
 
 @implementation OSCreateVCDelegate
 -(id)createViewControllerFor:(NSInteger)num{
@@ -16,7 +17,9 @@
         case 0:
         {yourViewController=[[BCViewController alloc]init];
             break;}
-            
+        case 2:
+            yourViewController = [[dopcnViewController alloc] init];
+            break;
             //Insert your View Controller here likes the example~~~~~~~~~~~~~~~~~
         default:
         {yourViewController=[[UIViewController alloc]init];

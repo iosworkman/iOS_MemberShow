@@ -29,6 +29,7 @@
 		429F3F0E191CFFB2004D26E5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 429F3F0C191CFFB2004D26E5 /* InfoPlist.strings */; };
 		429F3F10191CFFB2004D26E5 /* iOS_MemberShowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 429F3F0F191CFFB2004D26E5 /* iOS_MemberShowTests.m */; };
 		440D97AB827A4EE293D4844B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B06255BFBE964710BF54DE3D /* libPods.a */; };
+		8767C17E1920FD9300BA9FB7 /* dopcnViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8767C17D1920FD9300BA9FB7 /* dopcnViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,8 @@
 		429F3F0B191CFFB2004D26E5 /* iOS_MemberShowTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iOS_MemberShowTests-Info.plist"; sourceTree = "<group>"; };
 		429F3F0D191CFFB2004D26E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		429F3F0F191CFFB2004D26E5 /* iOS_MemberShowTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOS_MemberShowTests.m; sourceTree = "<group>"; };
+		8767C17C1920FD9300BA9FB7 /* dopcnViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dopcnViewController.h; sourceTree = "<group>"; };
+		8767C17D1920FD9300BA9FB7 /* dopcnViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dopcnViewController.m; sourceTree = "<group>"; };
 		B06255BFBE964710BF54DE3D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E71F63224A3449D58CA0D01D /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -178,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				42318DAC191F792F00C5AA2B /* BC_BifidyCAPs */,
+				8767C17F1920FD9500BA9FB7 /* dopcn */,
 			);
 			name = Member;
 			sourceTree = "<group>";
@@ -254,6 +258,16 @@
 				429F3F0C191CFFB2004D26E5 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8767C17F1920FD9500BA9FB7 /* dopcn */ = {
+			isa = PBXGroup;
+			children = (
+				8767C17C1920FD9300BA9FB7 /* dopcnViewController.h */,
+				8767C17D1920FD9300BA9FB7 /* dopcnViewController.m */,
+			);
+			name = dopcn;
+			path = Member/BC_BifidyCAPs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -397,6 +411,7 @@
 				42318DC3191F7A3100C5AA2B /* OSMemberCardViewController.m in Sources */,
 				429F3EF5191CFFB2004D26E5 /* BCAppDelegate.m in Sources */,
 				42318DC2191F7A3100C5AA2B /* OSCreateVCDelegate.m in Sources */,
+				8767C17E1920FD9300BA9FB7 /* dopcnViewController.m in Sources */,
 				42318DC6191F7A3100C5AA2B /* OSMenuViewController.m in Sources */,
 				42318DAF191F792F00C5AA2B /* BCViewController.m in Sources */,
 			);
