@@ -38,5 +38,21 @@
 		<key>advantage</key>
 		<string>黑苹果</string>
 	</dict>
+	<dict>
+		<key>age</key>
+		<string>23</string>
+		<key>job</key>
+		<string>Product Manager Assistant</string>
+		<key>name</key>
+		<string>dopcn</string>
+		<key>prefix</key>
+		<string>dopcn</string>
+		<key>icon</key>
+		<string>dopcn_icon</string>
+		<key>introduce</key>
+		<string>也很帅</string>
+		<key>advantage</key>
+		<string>outdoor hiking</string>
+	</dict>
 </array>
 </plist>
